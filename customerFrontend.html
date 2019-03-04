@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script type="text/javascript"
+            src="formChecker.js">
+    </script>
+
+    <link href="style.css"
+          rel="stylesheet"
+          type="text/css" />
+    <title>Web Store</title>
+</head>
+
+<body>
+<h1>Web Store</h1>
+
+<form onsubmit="validateInput()" action="customerBackend.php" method="post">
+      Username: <input type="text" name="email"><br>
+      Password: <input type="text" name="pass"><br>
+
+      <h2>Products</h2>
+      Spokane -- $100.00 -- Quantity: <input type="text" name="quantity1" stuff="Spokane" price1="100"> <br>
+      Walrus -- $80.00 -- Quantity: <input type="text" name="quantity2" stuff="Walrus" price2="80"> <br>
+      Spaghetti -- $10.00 -- Quantity: <input type="text" name="quantity3" stuff="Spaghetti" price3="10"> <br>
+
+      <h2>Shipping Options</h2>
+      <input type="radio" name="shipping" value="0"> 7-day Shipping -- $0.00 <br>
+      <input type="radio" name="shipping" value="50"> Overnight Shipping -- $50.00 <br>
+      <input type="radio" name="shipping" value="5"> 3-day Shipping -- $5.00 <br><br>
+
+      <input type="submit">
+      <input type="reset" onclick=location.reload(true)>
+
+</form>
+
+</body>
+
+</html>
