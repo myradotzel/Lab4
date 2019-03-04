@@ -1,34 +1,36 @@
 //formChecker.js
+    var email = document.getElementById("email")
+    var pass = document.getElementById("pass")
+    var q1 = document.getElementById("quantity1")
+    var q2 = document.getElementById("quantity2")
+    var q3 = document.getElementById("quantity3")
+    var shipping = document.getElementById("shipping")
+
+    var val_email = true;
+    var val_password = true;
+    var val_shipping = true;
+    var val_product = true;
 
 function validateInput()
 {
-    var email = document.getElementById("email").value
-    var pass = document.getElementById("pass").value
-    var q1 = document.getElementById("quantity1").value
-    var q2 = document.getElementById("quantity2").value
-    var q3 = document.getElementById("quantity3").value
-    var shipping = document.getElementById("shipping").value
-
-    var val_email = email.includes("@") && email.endsWith(".com");
-
-    if(email == null)
+    if(email.value == null || email.value == "" ||!email.value.includes("@") || !email.value.endsWith(".com"))
     {
         val_email = false;
     }
 
-    if(pass == null)
+    if(pass.value == null ||pass.value == "")
     {
-        var val_password = false;
+        val_password = false;
     }
 
-    if(q1 == null || q2 == null || q3 == null)
+    if(q1.value == null ||typeof(q1.value) == NaN|| q1.value<0 || q2.value == null || q2.value<0 || typeof(q2.value) == NaN|| q3.value<0 || q3.value == null || typeof(q3.value)==NaN)
     {
-        var val_product = false;
+        val_product = false;
     }
 
-    if(shipping == null)
+    if(shipping.value == null||shipping.value == "")
     {
-        var val_shipping = false;
+        val_shipping = false;
     }
 
     if (val_email && val_password && val_shipping && val_product)
@@ -36,17 +38,15 @@ function validateInput()
     	return true;
     }
 
-    else if (!val_email || !val_password)
+    if (!val_email || !val_password)
     {
   	alert("Invalid username or password.");
-	document.location.reload(true);
 	return false;
     }
 
     else
     {
   	alert("Must select an option.");
-	document.location.reload(true);
 	return false;
     }
 }
